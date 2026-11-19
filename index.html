@@ -22,6 +22,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Biplab Sarkar",
+  "email": "sarkarbiplab@gmail.com",
   "url": "https://ritz123.github.io/",
   "jobTitle": "Senior Staff Research Specialist",
   "worksFor": { "@type": "Organization", "name": "Nokia" },
@@ -136,13 +137,6 @@ a { color: inherit; }
   justify-content: center;
   padding: 36px 0 48px;
 }
-.kicker {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--c-red);
-  font-weight: 560;
-}
 .swatches {
   display: flex;
   gap: 8px;
@@ -157,7 +151,7 @@ a { color: inherit; }
 .swatches span:nth-child(4) { background: var(--c-teal); }
 .swatches span:nth-child(5) { background: var(--c-green); }
 h1 {
-  margin-top: 12px;
+  margin-top: 0;
   font-family: var(--serif);
   font-size: clamp(3.4rem, 7.4vw, 6.75rem);
   font-weight: 400;
@@ -412,6 +406,7 @@ h1 {
 .close li:nth-child(1) a { color: #f3b4ae; }
 .close li:nth-child(2) a { color: #f0c878; }
 .close li:nth-child(3) a { color: #9fd4ce; }
+.close li:nth-child(4) a { color: #a8c8f0; }
 .close__name {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 6vw, 4.5rem);
@@ -463,7 +458,7 @@ h1 {
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .kicker, h1, .role, .hero-grid {
+  h1, .role, .hero-grid {
     animation: enter 700ms cubic-bezier(.2, .7, .2, 1) both;
   }
   .role { animation-delay: 70ms; }
@@ -493,6 +488,7 @@ h1 {
       <a href="#record">Record</a>
     </nav>
     <div class="header-external">
+      <a rel="me" href="mailto:sarkarbiplab@gmail.com">Email</a>
       <a rel="me" href="https://github.com/ritz123">GitHub</a>
       <a rel="me" href="https://www.linkedin.com/in/biplabsarkar/">LinkedIn</a>
       <a rel="me" href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a>
@@ -503,7 +499,6 @@ h1 {
 <main id="content">
   <section class="hero" aria-labelledby="name">
     <div class="wrap">
-      <p class="kicker">Greater Bengaluru</p>
       <h1 id="name">Biplab <span class="surname">Sarkar</span></h1>
       <p class="role">Senior Staff Research Specialist at Nokia</p>
       <p class="swatches" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></p>
@@ -525,6 +520,14 @@ h1 {
           <div>
             <dt>Earlier</dt>
             <dd><a href="#record">Motorola, Starent Networks, IISc</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:sarkarbiplab@gmail.com">sarkarbiplab@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>Place</dt>
+            <dd>Greater Bengaluru</dd>
           </div>
         </dl>
         <p class="actions">
@@ -792,8 +795,9 @@ h1 {
       <li><a rel="me" href="https://github.com/ritz123">GitHub</a></li>
       <li><a rel="me" href="https://www.linkedin.com/in/biplabsarkar/">LinkedIn</a></li>
       <li><a rel="me" href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a></li>
+      <li><a href="mailto:sarkarbiplab@gmail.com">sarkarbiplab@gmail.com</a></li>
     </ul>
-    <p class="fine">Greater Bengaluru · © 2026</p>
+    <p class="fine">© 2026 Biplab Sarkar</p>
   </div>
 </footer>
 </body>
