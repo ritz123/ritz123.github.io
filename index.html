@@ -3,213 +3,798 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biplab Sarkar</title>
-<meta name="description" content="Software projects by Biplab Sarkar. Pages where a project has one, repositories where it does not.">
+<title>Biplab Sarkar — Nokia, IISc, and public software</title>
+<meta name="description" content="Biplab Sarkar, Senior Staff Research Specialist at Nokia in Bengaluru. Ph.D. in engineering design, Indian Institute of Science, 2016. Public software and books.">
+<meta name="theme-color" content="#f2efe8">
 <meta property="og:title" content="Biplab Sarkar">
-<meta property="og:description" content="Software projects. A page is linked when the project has one.">
-<meta property="og:type" content="website">
+<meta property="og:description" content="Senior Staff Research Specialist at Nokia in Bengaluru. Ph.D., Indian Institute of Science. Public software and books.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://ritz123.github.io/">
+<meta property="profile:first_name" content="Biplab">
+<meta property="profile:last_name" content="Sarkar">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ritz123.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..600;1,400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Biplab Sarkar",
+  "url": "https://ritz123.github.io/",
+  "jobTitle": "Senior Staff Research Specialist",
+  "worksFor": { "@type": "Organization", "name": "Nokia" },
+  "homeLocation": { "@type": "Place", "name": "Bengaluru" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Indian Institute of Science" },
+    { "@type": "CollegeOrUniversity", "name": "Indian Statistical Institute" },
+    { "@type": "CollegeOrUniversity", "name": "North Eastern Regional Institute of Science and Technology" }
+  ],
+  "sameAs": [
+    "https://github.com/ritz123",
+    "https://www.linkedin.com/in/biplabsarkar/",
+    "https://www.researchgate.net/profile/Biplab_Sarkar7"
+  ]
+}
+</script>
 <style>
 :root {
-  --bg: #eef0f3;
-  --ink: #0b0c0e;
-  --muted: #5d6470;
-  --line: #d5d8de;
-  --accent: #1f2de6;
+  --paper: #f2efe8;
+  --ink: #1b1916;
+  --muted: #5c564c;
+  --line: #d4cdc0;
+  --wash: #e7e1d6;
+  --accent: #0c5c56;
+  --c-red: #b42318;
+  --c-amber: #8a5200;
+  --c-blue: #1d4e89;
+  --c-teal: #0c5c56;
+  --c-green: #1b6b34;
+  --c-red-wash: #f8ebe6;
+  --c-amber-wash: #f8f1df;
+  --c-blue-wash: #e7eef6;
+  --c-teal-wash: #e5f2f0;
+  --c-green-wash: #e6f3ea;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "Instrument Sans", "Segoe UI", sans-serif;
 }
-* { box-sizing: border-box; }
-html { background: var(--bg); color: var(--ink); }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); color: var(--ink); scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Host Grotesk", system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 1.45;
+  font-family: var(--sans);
+  font-size: 1.125rem;
+  font-weight: 430;
+  line-height: 1.5;
+  font-optical-sizing: auto;
 }
+h1, h2, h3, p, dl, dd { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; }
+::selection { background: #c9e4e1; color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .skip {
   position: absolute;
   left: 16px;
-  top: -40px;
+  top: -48px;
   background: var(--ink);
-  color: var(--bg);
-  padding: 8px 12px;
+  color: var(--paper);
+  padding: 10px 14px;
+  z-index: 30;
 }
-.skip:focus { top: 16px; }
+.skip:focus { top: 12px; }
 .wrap {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 48px 24px 72px;
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
 }
-h1 {
-  margin: 0;
-  font-size: clamp(40px, 8vw, 64px);
-  font-weight: 560;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
-.lede {
-  margin: 16px 0 0;
-  max-width: 28rem;
-  color: var(--muted);
-}
-.links {
+.header-inner {
   display: flex;
-  gap: 20px;
-  margin: 20px 0 0;
-  font-size: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 28px;
+  min-height: 64px;
+  padding-block: 6px;
 }
-.links a { color: var(--accent); text-underline-offset: 3px; }
-h2 {
-  margin: 56px 0 0;
-  font-size: 13px;
+.mark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-right: auto;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.site-nav, .header-external { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.site-nav a, .header-external a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 180ms ease;
+}
+.site-nav a:hover, .header-external a:hover { background-size: 100% 1px; }
+
+.hero {
+  min-height: calc(100svh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 0 48px;
+}
+.kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-red);
   font-weight: 560;
-  letter-spacing: 0.08em;
+}
+.swatches {
+  display: flex;
+  gap: 8px;
+  width: min(240px, 100%);
+  height: 10px;
+  margin-top: 22px;
+}
+.swatches span { flex: 1; }
+.swatches span:nth-child(1) { background: var(--c-red); }
+.swatches span:nth-child(2) { background: var(--c-amber); }
+.swatches span:nth-child(3) { background: var(--c-blue); }
+.swatches span:nth-child(4) { background: var(--c-teal); }
+.swatches span:nth-child(5) { background: var(--c-green); }
+h1 {
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 7.4vw, 6.75rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+.surname { font-style: italic; }
+.role {
+  margin-top: 18px;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  letter-spacing: -0.02em;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-areas:
+    "lede facts"
+    "actions facts";
+  gap: 28px 56px;
+  align-items: end;
+  margin-top: 36px;
+}
+.lede { grid-area: lede; max-width: 38rem; font-size: 1.2rem; line-height: 1.45; }
+.facts { grid-area: facts; }
+.hero-grid .actions { grid-area: actions; margin-top: 4px; }
+.facts { border-top: 1px solid var(--ink); }
+.facts div {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.98rem;
+}
+.facts dt { color: var(--muted); }
+.facts a { color: var(--accent); text-underline-offset: 3px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--c-red);
+  background: var(--c-red);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 140ms ease, border-color 140ms ease, transform 100ms ease;
+}
+.btn:hover { background: var(--c-teal); border-color: var(--c-teal); }
+.btn:active { transform: translateY(1px); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+.block { padding: 88px 0; border-top: 1px solid var(--line); scroll-margin-top: 76px; }
+.block h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.num {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 560;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+#nokia-title .num { color: var(--c-blue); }
+#projects-title .num { color: var(--c-red); }
+#writing-title .num { color: var(--c-amber); }
+#record-title .num { color: var(--c-green); }
+.intro { max-width: 40rem; margin-top: 18px; }
+
+.eras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+.eras article { border-top: 3px solid var(--c-blue); padding-top: 14px; }
+.eras article:nth-child(2) { border-top-color: var(--c-teal); }
+.eras article:nth-child(3) { border-top-color: var(--c-green); }
+.eras article:nth-child(1) h3 { color: var(--c-blue); }
+.eras article:nth-child(2) h3 { color: var(--c-teal); }
+.eras article:nth-child(3) h3 { color: var(--c-green); }
+.eras h3 {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.eras p { margin-top: 12px; color: var(--ink); }
+
+.group {
+  margin: 36px 0 0;
+  font-size: 0.78rem;
+  font-weight: 560;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
 }
-.list { margin: 12px 0 0; }
-.project {
+.cards {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2px 16px;
-  padding: 16px 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+.cards a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  min-height: 11.5rem;
+  padding: 16px 18px 16px;
+  border: 1px solid var(--card, var(--c-teal));
+  border-top-width: 4px;
+  text-decoration: none;
+  background: var(--card-wash, var(--c-teal-wash));
+  transition: transform 160ms ease, background 160ms ease;
+}
+.cards a:hover, .cards a:focus-visible {
+  transform: translateY(-2px);
+}
+.cards--pages { --card: var(--c-red); --card-wash: var(--c-red-wash); }
+.cards--models { --card: var(--c-amber); --card-wash: var(--c-amber-wash); }
+.cards--systems { --card: var(--c-blue); --card-wash: var(--c-blue-wash); }
+.cards--research { --card: var(--c-teal); --card-wash: var(--c-teal-wash); }
+.cards--web { --card: var(--c-green); --card-wash: var(--c-green-wash); }
+#g-pages { color: var(--c-red); }
+#g-models { color: var(--c-amber); }
+#g-systems { color: var(--c-blue); }
+#g-research { color: var(--c-teal); }
+#g-web { color: var(--c-green); }
+.card__kicker {
+  order: -1;
+  font-size: 0.75rem;
+  font-weight: 560;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card, var(--accent));
+}
+.card__name {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+.cards.cards--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards a:hover .card__name, .cards a:focus-visible .card__name { color: var(--card, var(--accent)); }
+.card__line {
+  margin-top: auto;
+  max-width: 36ch;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.writing { margin-top: 28px; }
+.writing a {
+  display: block;
+  padding: 22px 10px;
+  margin: 0 -10px;
   border-top: 1px solid var(--line);
   text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
 }
-.project:last-child { border-bottom: 1px solid var(--line); }
-.project:hover .project__name,
-.project:focus-visible .project__name { color: var(--accent); }
-.project:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.project__name { font-weight: 560; }
-.project__kind {
-  font-size: 13px;
-  color: var(--muted);
+.writing li:last-child a { border-bottom: 1px solid var(--line); }
+.writing a:hover, .writing a:focus-visible {
+  background: var(--wash);
+  transform: translateY(-2px);
 }
-.project__line {
-  grid-column: 1 / -1;
-  color: var(--muted);
-  font-size: 16px;
+.writing h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
-footer {
-  margin-top: 48px;
-  color: var(--muted);
-  font-size: 14px;
+.writing li:nth-child(1) a { box-shadow: inset 4px 0 0 var(--c-amber); }
+.writing li:nth-child(2) a { box-shadow: inset 4px 0 0 var(--c-red); }
+.writing li:nth-child(3) a { box-shadow: inset 4px 0 0 var(--c-blue); }
+.writing li:nth-child(4) a { box-shadow: inset 4px 0 0 var(--c-teal); }
+.writing li:nth-child(5) a { box-shadow: inset 4px 0 0 var(--c-green); }
+.writing li:nth-child(1) a:hover h3 { color: var(--c-amber); }
+.writing li:nth-child(2) a:hover h3 { color: var(--c-red); }
+.writing li:nth-child(3) a:hover h3 { color: var(--c-blue); }
+.writing li:nth-child(4) a:hover h3 { color: var(--c-teal); }
+.writing li:nth-child(5) a:hover h3 { color: var(--c-green); }
+.writing p { margin-top: 8px; max-width: 62ch; color: var(--muted); }
+
+.posts { margin-top: 32px; }
+.post {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 8px 28px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.posts .post:last-child { border-bottom: 1px solid var(--line); }
+.post .when, .study dt {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.post:nth-child(1) .when { color: var(--c-red); }
+.post:nth-child(2) .when { color: var(--c-amber); }
+.post:nth-child(3) .when { color: var(--c-teal); }
+.post:nth-child(4) .when { color: var(--c-blue); }
+.study div:nth-child(1) dt { color: var(--c-green); }
+.study div:nth-child(2) dt { color: var(--c-blue); }
+.post a { color: var(--accent); text-underline-offset: 3px; }
+.study {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+.study div {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 8px 28px;
+}
+
+.close {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 72px 0 48px;
+}
+.close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg,
+    var(--c-red) 0 20%,
+    var(--c-amber) 20% 40%,
+    var(--c-blue) 40% 60%,
+    var(--c-teal) 60% 80%,
+    var(--c-green) 80% 100%);
+}
+.close li:nth-child(1) a { color: #f3b4ae; }
+.close li:nth-child(2) a { color: #f0c878; }
+.close li:nth-child(3) a { color: #9fd4ce; }
+.close__name {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-style: italic;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+.close ul { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 22px; }
+.close a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--paper);
+  text-underline-offset: 4px;
+}
+.close .fine { margin-top: 28px; color: #c9c2b6; font-size: 0.95rem; }
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lede"
+      "actions"
+      "facts";
+    gap: 22px;
+  }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eras { grid-template-columns: 1fr; }
+  .block { padding: 64px 0; }
+}
+@media (max-width: 720px) {
+  .mark { flex-basis: 100%; }
+  .header-external a[href*="linkedin.com"],
+  .header-external a[href*="researchgate.net"] { display: none; }
+}
+@media (max-width: 640px) {
+  .wrap { width: min(1120px, calc(100% - 32px)); }
+  .facts div, .post, .study div { grid-template-columns: 1fr; gap: 2px; }
+  .cards, .cards.cards--pair { grid-template-columns: 1fr; }
+  .cards a { min-height: 0; }
+  .actions .btn { width: 100%; }
+  h1 { font-size: clamp(3.1rem, 16vw, 4.2rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .kicker, h1, .role, .hero-grid {
+    animation: enter 700ms cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .role { animation-delay: 70ms; }
+  .hero-grid { animation-delay: 120ms; }
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media print {
+  .site-header, .skip, .actions { display: none; }
+  .hero { min-height: 0; }
+  .close { background: white; color: black; }
+  .close a, .close .fine { color: black; }
+  a { text-decoration: underline; }
 }
 </style>
 </head>
-<body>
-<a class="skip" href="#pages">Skip to projects</a>
-<main class="wrap">
-  <h1>Biplab Sarkar</h1>
-  <p class="lede">Software projects. A page is linked when the project has one. The others go to the repository.</p>
-  <p class="links">
-    <a href="https://github.com/ritz123">GitHub</a>
-    <a href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a>
-  </p>
-
-  <h2 id="pages">Pages</h2>
-  <div class="list">
-    <a class="project" href="https://ritz123.github.io/WorkTracker/">
-      <span class="project__name">Work Tracker</span>
-      <span class="project__kind">Page</span>
-      <span class="project__line">A weekly work log, with the Linux and Windows builds.</span>
-    </a>
-    <a class="project" href="https://ritz123.github.io/MockTests/">
-      <span class="project__name">MockTests</span>
-      <span class="project__kind">Page</span>
-      <span class="project__line">Aptitude practice.</span>
-    </a>
+<body id="top">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="mark" href="#top">Biplab Sarkar</a>
+    <nav class="site-nav" aria-label="Page">
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#record">Record</a>
+    </nav>
+    <div class="header-external">
+      <a rel="me" href="https://github.com/ritz123">GitHub</a>
+      <a rel="me" href="https://www.linkedin.com/in/biplabsarkar/">LinkedIn</a>
+      <a rel="me" href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a>
+    </div>
   </div>
+</header>
 
-  <h2 id="repositories">Repositories</h2>
-  <div class="list">
-    <a class="project" href="https://github.com/ritz123/MovieMaker">
-      <span class="project__name">MovieMaker</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Short movie clips generated locally, with no cloud account and no API key.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/DesktopLLM">
-      <span class="project__name">DesktopLLM</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">A Linux desktop chat client for local Ollama models and for OpenRouter.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/ai_usb">
-      <span class="project__name">AI USB</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">A bootable Ubuntu workstation with Ollama installed.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/SyCd">
-      <span class="project__name">SyCd</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Conceptual designs for sensors, from research at the Indian Institute of Science, Bangalore.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/funOS">
-      <span class="project__name">funOS</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">An x86_64 microkernel demo for QEMU.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/ReportLLM">
-      <span class="project__name">ReportLLM</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Apartment maintenance reports, written with a local model.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/text2video">
-      <span class="project__name">text2video</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Captioned videos from a text prompt, generated locally.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/LeapReader">
-      <span class="project__name">LeapReader</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Leap to another page or document and keep your place.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/LLM-Translate">
-      <span class="project__name">LLM-Translate</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">A desktop editor for a structured document and its translations.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/manuscript2presentation">
-      <span class="project__name">manuscript2presentation</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Turns a manuscript into a presentation.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/JobSearch">
-      <span class="project__name">JobSearch</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Job scrapers and a React dashboard.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/SEO-Hunter">
-      <span class="project__name">SEO-Hunter</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Finds local businesses with outdated or insecure websites and audits them.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/SeoWatch">
-      <span class="project__name">SeoWatch</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">A visual manager for SEO tags.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/Website-Copy">
-      <span class="project__name">Website-Copy</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Scrapes a website and generates a redesign, with a browser view for editing.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/KSPeppstein">
-      <span class="project__name">KSPeppstein</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">A JavaScript implementation of Eppstein’s k-shortest path algorithm.</span>
-    </a>
-    <a class="project" href="https://github.com/ritz123/malloc_hooks">
-      <span class="project__name">malloc_hooks</span>
-      <span class="project__kind">Repository</span>
-      <span class="project__line">Malloc hooks for multi-threaded programs on Linux.</span>
-    </a>
-  </div>
+<main id="content">
+  <section class="hero" aria-labelledby="name">
+    <div class="wrap">
+      <p class="kicker">Greater Bengaluru</p>
+      <h1 id="name">Biplab <span class="surname">Sarkar</span></h1>
+      <p class="role">Senior Staff Research Specialist at Nokia</p>
+      <p class="swatches" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></p>
+      <div class="hero-grid">
+        <p class="lede">Simulators for 5G-Advanced and 6G research, and the public programs: local models, systems experiments, and tools for documents, reading, and search.</p>
+        <dl class="facts">
+          <div>
+            <dt>This role</dt>
+            <dd>Since November 2022</dd>
+          </div>
+          <div>
+            <dt>Doctorate</dt>
+            <dd>Engineering design, IISc, 2016</dd>
+          </div>
+          <div>
+            <dt>In software</dt>
+            <dd>Since 1998</dd>
+          </div>
+          <div>
+            <dt>Earlier</dt>
+            <dd><a href="#record">Motorola, Starent Networks, IISc</a></dd>
+          </div>
+        </dl>
+        <p class="actions">
+          <a class="btn" href="#projects">See the projects</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/biplabsarkar/">Open LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <footer>© 2026 Biplab Sarkar</footer>
+  <section class="block" id="nokia" aria-labelledby="nokia-title">
+    <div class="wrap">
+      <h2 id="nokia-title"><span class="num" aria-hidden="true">01</span>At Nokia</h2>
+      <p class="intro">He joined Nokia in Bengaluru in June 2016. The work moved from Wi-Fi into the CBRS Domain Proxy, and from there into research simulators.</p>
+      <div class="eras">
+        <article>
+          <h3>2016–2020</h3>
+          <p>Development architect, then Wi-Fi development, then CBRS. The last months of this stretch were on the CBRS Domain Proxy, including a security upgrade of software components.</p>
+        </article>
+        <article>
+          <h3>2020–2022</h3>
+          <p>Technical lead, then technical specialist, for the CBRS Domain Proxy platform. Configuration management was generated from templates. He also worked on the Airphone 5G simulator.</p>
+        </article>
+        <article>
+          <h3>2022–</h3>
+          <p>Simulators for 5G-Advanced and 6G mobile research, and a Kubernetes-based Linux environment for the department’s compute.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <h2 id="projects-title"><span class="num" aria-hidden="true">02</span>Public projects</h2>
+      <p class="intro">Every project here is public. A card opens the page when the project has one, and the repository otherwise.</p>
+
+      <h3 class="group" id="g-pages">Published here</h3>
+      <ul class="cards cards--pair cards--pages" aria-labelledby="g-pages">
+        <li>
+          <a href="https://ritz123.github.io/WorkTracker/">
+            <span class="card__name">Work Tracker</span>
+            <span class="card__kicker">Public page · Rust</span>
+            <span class="card__line">A weekly work log, with the Linux and Windows builds.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://ritz123.github.io/MockTests/">
+            <span class="card__name">MockTests</span>
+            <span class="card__kicker">Public page · Python</span>
+            <span class="card__line">Aptitude practice.</span>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="group" id="g-models">Local models</h3>
+      <ul class="cards cards--models" aria-labelledby="g-models">
+        <li>
+          <a href="https://github.com/ritz123/MovieMaker">
+            <span class="card__name">MovieMaker</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Short movie clips generated locally, with no cloud account and no API key.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/DesktopLLM">
+            <span class="card__name">DesktopLLM</span>
+            <span class="card__kicker">Public repository · TypeScript</span>
+            <span class="card__line">A Linux desktop chat client for local Ollama models and for OpenRouter.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/ai_usb">
+            <span class="card__name">AI USB</span>
+            <span class="card__kicker">Public repository · Shell</span>
+            <span class="card__line">A bootable Ubuntu workstation with Ollama installed.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/ReportLLM">
+            <span class="card__name">ReportLLM</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Apartment maintenance reports, written with a local model.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/text2video">
+            <span class="card__name">text2video</span>
+            <span class="card__kicker">Public repository · Go</span>
+            <span class="card__line">Captioned videos from a text prompt, generated locally.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/LLM-Translate">
+            <span class="card__name">LLM-Translate</span>
+            <span class="card__kicker">Public repository · TypeScript</span>
+            <span class="card__line">A desktop editor for a structured document and its translations.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/manuscript2presentation">
+            <span class="card__name">manuscript2presentation</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Turns a manuscript into a presentation.</span>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="group" id="g-systems">Systems</h3>
+      <ul class="cards cards--systems" aria-labelledby="g-systems">
+        <li>
+          <a href="https://github.com/ritz123/funOS">
+            <span class="card__name">funOS</span>
+            <span class="card__kicker">Public repository · Rust</span>
+            <span class="card__line">An x86_64 microkernel demo for QEMU.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/malloc_hooks">
+            <span class="card__name">malloc_hooks</span>
+            <span class="card__kicker">Public repository · C</span>
+            <span class="card__line">Malloc hooks for multi-threaded programs on Linux.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/KSPeppstein">
+            <span class="card__name">KSPeppstein</span>
+            <span class="card__kicker">Public repository · JavaScript</span>
+            <span class="card__line">A JavaScript implementation of Eppstein’s k-shortest path algorithm.</span>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="group" id="g-research">Research</h3>
+      <ul class="cards cards--research" aria-labelledby="g-research">
+        <li>
+          <a href="https://github.com/ritz123/SyCd">
+            <span class="card__name">SyCd</span>
+            <span class="card__kicker">Public repository · JavaScript</span>
+            <span class="card__line">Conceptual designs for sensors, from research at the Indian Institute of Science, Bangalore.</span>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="group" id="g-web">On the web</h3>
+      <ul class="cards cards--web" aria-labelledby="g-web">
+        <li>
+          <a href="https://github.com/ritz123/LeapReader">
+            <span class="card__name">LeapReader</span>
+            <span class="card__kicker">Public repository · HTML</span>
+            <span class="card__line">Leap to another page or document and keep your place.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/JobSearch">
+            <span class="card__name">JobSearch</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Job scrapers and a React dashboard.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/SEO-Hunter">
+            <span class="card__name">SEO-Hunter</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Finds local businesses with outdated or insecure websites and audits them.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/SeoWatch">
+            <span class="card__name">SeoWatch</span>
+            <span class="card__kicker">Public repository · TypeScript</span>
+            <span class="card__line">A visual manager for SEO tags.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ritz123/Website-Copy">
+            <span class="card__name">Website-Copy</span>
+            <span class="card__kicker">Public repository · Python</span>
+            <span class="card__line">Scrapes a website and generates a redesign, with a browser view for editing.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="writing" aria-labelledby="writing-title">
+    <div class="wrap">
+      <h2 id="writing-title"><span class="num" aria-hidden="true">03</span>Writing</h2>
+      <p class="intro">Three Kindle books from 2026, and the papers on synthesizing sensor concepts.</p>
+      <ul class="writing">
+        <li>
+          <a href="https://www.amazon.in/dp/B0HC389MLN">
+            <h3>Understanding Software Design — Principles, Patterns, and Techniques</h3>
+            <p>Kindle, 2026. 350 pages. Principles, the twenty-three classic patterns, and everyday techniques, taught through one bookstore, Letter-grove, in Python and C++.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.amazon.in/dp/B0HBFN64VB">
+            <h3>Learn Go Programming in a Day</h3>
+            <p>Kindle, 2026. 73 pages. A classroom path from a first program through concurrency, testing, and small web services.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.amazon.in/dp/B0GZLZ2VBP">
+            <h3>The Rust Bootcamp: Two Intensive Days from First Principles to Fearless Systems Programming</h3>
+            <p>Kindle, 2026. 261 pages. A two-day classroom course from first principles to systems programming in Rust.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://doi.org/10.1007/s00163-016-0231-6">
+            <h3>Synthesis of feedback-based design concepts for sensors</h3>
+            <p>With Amaresh Chakrabarti and G. K. Ananthasuresh. Research in Engineering Design, 2016.</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://doi.org/10.13140/RG.2.2.35534.36160">
+            <h3>An approach to enhance robustness of automatically synthesized sensor concepts</h3>
+            <p>With Amaresh Chakrabarti and G. K. Ananthasuresh. 2018.</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="record" aria-labelledby="record-title">
+    <div class="wrap">
+      <h2 id="record-title"><span class="num" aria-hidden="true">04</span>Earlier</h2>
+      <p class="intro">Employment before Nokia, and the degrees behind the work.</p>
+      <div class="posts">
+        <article class="post">
+          <p class="when">1998–2005</p>
+          <p>Motorola India Electronics, Bengaluru. Software test, then development. From 2001, components of Motorola’s 3G1x CDMA solution.</p>
+        </article>
+        <article class="post">
+          <p class="when">2005–2009</p>
+          <p>Starent Networks, Bengaluru. Principal Member of Technical Staff. He adopted the ROHC header-compression stack into the PDSN product, and took part in the IETF ROHC work behind <a href="https://www.rfc-editor.org/info/rfc4815">RFC 4815</a> and <a href="https://www.rfc-editor.org/info/rfc5795">RFC 5795</a>.</p>
+        </article>
+        <article class="post">
+          <p class="when">2009–2016</p>
+          <p>Indian Institute of Science, Bengaluru. Research fellow from 2009 to 2015 on a NPMASS project for the automatic synthesis of sensor concepts, and author of the web software used to test the method. Ph.D. in engineering design, awarded in 2016, advised by Amaresh Chakrabarti and G. K. Ananthasuresh. Thesis: Synthesis of Conceptual Designs for Sensors.</p>
+        </article>
+        <article class="post">
+          <p class="when">2015–2016</p>
+          <p>Murmuration Solutions, Bengaluru. Backend server for a secure-communication app.</p>
+        </article>
+      </div>
+      <h3 class="group">Study</h3>
+      <dl class="study">
+        <div>
+          <dt>M.Tech.</dt>
+          <dd>Computer Science, Indian Statistical Institute, Kolkata</dd>
+        </div>
+        <div>
+          <dt>B.Tech.</dt>
+          <dd>Electronics and Communication Engineering, North Eastern Regional Institute of Science and Technology, Itanagar</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 </main>
+
+<footer class="close">
+  <div class="wrap">
+    <p class="close__name">Biplab Sarkar</p>
+    <ul>
+      <li><a rel="me" href="https://github.com/ritz123">GitHub</a></li>
+      <li><a rel="me" href="https://www.linkedin.com/in/biplabsarkar/">LinkedIn</a></li>
+      <li><a rel="me" href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a></li>
+    </ul>
+    <p class="fine">Greater Bengaluru · © 2026</p>
+  </div>
+</footer>
 </body>
 </html>
