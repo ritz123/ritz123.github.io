@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biplab Sarkar</title>
+<meta name="description" content="Software projects by Biplab Sarkar. Pages where a project has one, repositories where it does not.">
+<meta property="og:title" content="Biplab Sarkar">
+<meta property="og:description" content="Software projects. A page is linked when the project has one.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ritz123.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #eef0f3;
+  --ink: #0b0c0e;
+  --muted: #5d6470;
+  --line: #d5d8de;
+  --accent: #1f2de6;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ink); }
+body {
+  margin: 0;
+  font-family: "Host Grotesk", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -40px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 8px 12px;
+}
+.skip:focus { top: 16px; }
+.wrap {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 64px);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+.lede {
+  margin: 16px 0 0;
+  max-width: 28rem;
+  color: var(--muted);
+}
+.links {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0 0;
+  font-size: 16px;
+}
+.links a { color: var(--accent); text-underline-offset: 3px; }
+h2 {
+  margin: 56px 0 0;
+  font-size: 13px;
+  font-weight: 560;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.list { margin: 12px 0 0; }
+.project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+.project:last-child { border-bottom: 1px solid var(--line); }
+.project:hover .project__name,
+.project:focus-visible .project__name { color: var(--accent); }
+.project:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.project__name { font-weight: 560; }
+.project__kind {
+  font-size: 13px;
+  color: var(--muted);
+}
+.project__line {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 16px;
+}
+footer {
+  margin-top: 48px;
+  color: var(--muted);
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#pages">Skip to projects</a>
+<main class="wrap">
+  <h1>Biplab Sarkar</h1>
+  <p class="lede">Software projects. A page is linked when the project has one. The others go to the repository.</p>
+  <p class="links">
+    <a href="https://github.com/ritz123">GitHub</a>
+    <a href="https://www.researchgate.net/profile/Biplab_Sarkar7">ResearchGate</a>
+  </p>
+
+  <h2 id="pages">Pages</h2>
+  <div class="list">
+    <a class="project" href="https://ritz123.github.io/WorkTracker/">
+      <span class="project__name">Work Tracker</span>
+      <span class="project__kind">Page</span>
+      <span class="project__line">A weekly work log, with the Linux and Windows builds.</span>
+    </a>
+    <a class="project" href="https://ritz123.github.io/MockTests/">
+      <span class="project__name">MockTests</span>
+      <span class="project__kind">Page</span>
+      <span class="project__line">Aptitude practice.</span>
+    </a>
+  </div>
+
+  <h2 id="repositories">Repositories</h2>
+  <div class="list">
+    <a class="project" href="https://github.com/ritz123/MovieMaker">
+      <span class="project__name">MovieMaker</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Short movie clips generated locally, with no cloud account and no API key.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/DesktopLLM">
+      <span class="project__name">DesktopLLM</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">A Linux desktop chat client for local Ollama models and for OpenRouter.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/ai_usb">
+      <span class="project__name">AI USB</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">A bootable Ubuntu workstation with Ollama installed.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/SyCd">
+      <span class="project__name">SyCd</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Conceptual designs for sensors, from research at the Indian Institute of Science, Bangalore.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/funOS">
+      <span class="project__name">funOS</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">An x86_64 microkernel demo for QEMU.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/ReportLLM">
+      <span class="project__name">ReportLLM</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Apartment maintenance reports, written with a local model.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/text2video">
+      <span class="project__name">text2video</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Captioned videos from a text prompt, generated locally.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/LeapReader">
+      <span class="project__name">LeapReader</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Leap to another page or document and keep your place.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/LLM-Translate">
+      <span class="project__name">LLM-Translate</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">A desktop editor for a structured document and its translations.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/manuscript2presentation">
+      <span class="project__name">manuscript2presentation</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Turns a manuscript into a presentation.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/JobSearch">
+      <span class="project__name">JobSearch</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Job scrapers and a React dashboard.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/SEO-Hunter">
+      <span class="project__name">SEO-Hunter</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Finds local businesses with outdated or insecure websites and audits them.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/SeoWatch">
+      <span class="project__name">SeoWatch</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">A visual manager for SEO tags.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/Website-Copy">
+      <span class="project__name">Website-Copy</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Scrapes a website and generates a redesign, with a browser view for editing.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/KSPeppstein">
+      <span class="project__name">KSPeppstein</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">A JavaScript implementation of Eppstein’s k-shortest path algorithm.</span>
+    </a>
+    <a class="project" href="https://github.com/ritz123/malloc_hooks">
+      <span class="project__name">malloc_hooks</span>
+      <span class="project__kind">Repository</span>
+      <span class="project__line">Malloc hooks for multi-threaded programs on Linux.</span>
+    </a>
+  </div>
+
+  <footer>© 2026 Biplab Sarkar</footer>
+</main>
+</body>
+</html>
