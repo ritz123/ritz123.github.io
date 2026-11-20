@@ -10,7 +10,19 @@
   gtag.js for the measurement ID: the container already emits the
   GA4 hit, and a second gtag('config') would record each visit twice.
   The matching noscript iframe sits immediately after <body>.
+
+  cookie_domain is this page's host, not "auto". Auto walks parent
+  domains and the first parent of ritz123.github.io is github.io, a
+  public suffix. The browser rejects Domain=github.io, which is the
+  "Cookie _ga has been rejected for invalid domain" console error.
+  The host itself is a valid cookie domain, so the same cookies are
+  stored once that parent write is not attempted.
 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('set', 'cookie_domain', location.hostname);
+</script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
