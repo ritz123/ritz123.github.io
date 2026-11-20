@@ -4,19 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
-  Google Analytics 4 for this portfolio. G-93N6B1HF5C is the measurement
-  ID of the property that should receive page views from
-  https://ritz123.github.io/. The tag stays in <head> so the first view
-  is recorded before the rest of the document loads. A different or
-  missing ID sends traffic to the wrong property, or to none.
+  Google tag for this portfolio. GTM-KVM6VH5P is the Tag Manager
+  container that owns measurement ID G-93N6B1HF5C and sends this
+  site's page views to that property. Load the container, not
+  gtag.js for the measurement ID: the container already emits the
+  GA4 hit, and a second gtag('config') would record each visit twice.
+  The matching noscript iframe sits immediately after <body>.
 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-93N6B1HF5C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-93N6B1HF5C');
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KVM6VH5P');</script>
 <title>Biplab Sarkar — Nokia, IISc, and public software</title>
 <meta name="description" content="Biplab Sarkar, Senior Staff Research Specialist at Nokia in Bengaluru. Ph.D. in engineering design, Indian Institute of Science, 2016. Public software and books.">
 <meta name="theme-color" content="#f2efe8">
@@ -492,6 +491,7 @@ h1 {
 </style>
 </head>
 <body id="top">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVM6VH5P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
